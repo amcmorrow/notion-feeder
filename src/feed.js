@@ -20,7 +20,7 @@ async function getNewFeedItemsFrom(feedUrl) {
 
   // Filter out items that fall in the run frequency range
   return rss.items.filter((item) => {
-    const blogPublishedTime = new Date(item.pubDate).getTime() / 1000;
+    const blogPublishedTime = new Date(item.pubDate).getTime();
     const { diffInSeconds } = timeDifference(currentTime, blogPublishedTime);
     return diffInSeconds < RUN_FREQUENCY;
   });
