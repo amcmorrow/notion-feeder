@@ -2,7 +2,7 @@ name: Get Feed
 
 on:
   schedule:
-    - cron: '28 16 * * *' # 11:28CST
+    - cron: '00 12 * * *' # 11:28CST
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
       NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
       NOTION_READER_DATABASE_ID: ${{ secrets.NOTION_READER_DATABASE_ID }}
       NOTION_FEEDS_DATABASE_ID: ${{ secrets.NOTION_FEEDS_DATABASE_ID }}
-      RUN_FREQUENCY: 450 # in seconds
+      RUN_FREQUENCY: 1800 # in seconds
     steps:
       - name: Setup Node
         uses: actions/setup-node@v4
